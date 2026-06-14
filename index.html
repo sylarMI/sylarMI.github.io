@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>香港智慧醫學影像科技有限公司 | HK-SMII</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #1a2a3a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* header / nav */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0B3B5F, #1E7EA5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: #1E7EA5;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e2f3e;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1E7EA5;
+        }
+
+        /* buttons */
+        .btn-primary {
+            background: #0B3B5F;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #1E7EA5;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #1E7EA5;
+            color: #1E7EA5;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #1E7EA5;
+            color: white;
+        }
+
+        /* hero */
+        .hero {
+            padding: 60px 0 40px;
+            background: linear-gradient(100deg, #F0F9FF 0%, #ffffff 100%);
+            border-radius: 0 0 40px 40px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h2 {
+            font-size: 2.7rem;
+            font-weight: 700;
+            color: #0B3B5F;
+            line-height: 1.2;
+        }
+
+        .hero-text .highlight {
+            color: #1E7EA5;
+        }
+
+        .hero-text p {
+            margin: 20px 0 28px;
+            font-size: 1.1rem;
+            color: #2c4b63;
+        }
+
+        .hero-image {
+            flex: 0.8;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            width: 300px;
+            opacity: 0.9;
+        }
+
+        /* section通用 */
+        section {
+            padding: 70px 0;
+            border-bottom: 1px solid #eef2f5;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #0B3B5F;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #1E7EA5;
+            border-radius: 4px;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border: 1px solid #e2edf2;
+            transition: 0.2s;
+        }
+
+        .card i {
+            font-size: 2.4rem;
+            color: #1E7EA5;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .pillar-list {
+            margin-top: 16px;
+            list-style: none;
+        }
+
+        .pillar-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pillar-list i.fa-check-circle {
+            color: #1E7EA5;
+            font-size: 1rem;
+        }
+
+        .tech-arch {
+            background: #F7FBFE;
+            border-radius: 36px;
+            padding: 32px;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        .layers {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .layer {
+            background: white;
+            border-left: 6px solid #1E7EA5;
+            padding: 12px 20px;
+            text-align: left;
+            border-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: space-between;
+        }
+
+        .phase {
+            flex: 1;
+            background: #F9FCFD;
+            padding: 24px;
+            border-radius: 32px;
+            border-top: 4px solid #1E7EA5;
+        }
+
+        .phase h4 {
+            font-size: 1.5rem;
+            color: #0B3B5F;
+        }
+
+        .footer {
+            background: #0B1C28;
+            color: #cddfe7;
+            padding: 48px 0 32px;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer a {
+            color: #b9d9e8;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .phase {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <h1>HK-SMII</h1>
+            <p>香港智慧醫學影像科技有限公司</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">首頁</a></li>
+            <li><a href="#tech">技術架構</a></li>
+            <li><a href="#products">產品服務</a></li>
+            <li><a href="#roadmap">市場路線</a></li>
+            <li><a href="#team">團隊招募</a></li>
+            <li><a href="#contact">聯繫</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <h2>融匯AI·影像 <span class="highlight">智領精準醫療</span></h2>
+            <p>多模態MRI·CT·超聲 | 醫療大模型 · 神經影像 · 智慧診療</p>
+            <p>立足香港，輻射亞太。為醫療機構與科研單位提供智能診斷解決方案與數據洞察服務。</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="#contact" class="btn-primary">合作諮詢</a>
+                <a href="#tech" class="btn-outline">探索技術</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- 装饰性SVG 医学影像示意 -->
+            <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="150" cy="120" r="80" fill="#E1F0F9" stroke="#1E7EA5" stroke-width="2"/>
+                <path d="M120 100 L180 100 M150 80 L150 160" stroke="#0B3B5F" stroke-width="3" stroke-linecap="round"/>
+                <rect x="130" y="190" width="40" height="30" fill="#1E7EA5" rx="8" />
+                <text x="145" y="210" fill="white" font-size="12" text-anchor="middle">MRI</text>
+                <circle cx="70" cy="180" r="18" fill="#C6E2F2" />
+                <circle cx="230" cy="180" r="18" fill="#C6E2F2" />
+                <path d="M50 220 L80 200 L120 220 L160 200 L200 220 L240 200 L270 220" stroke="#0B3B5F" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- 公司愿景使命 -->
+<div class="container">
+    <div class="grid-2col" style="margin: 40px 0;">
+        <div class="card">
+            <i class="fas fa-eye"></i>
+            <h3>願景</h3>
+            <p>成為亞太地區智慧醫學影像技術創新的領導者，賦能精準醫療，提升人類健康水平。</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-rocket"></i>
+            <h3>使命</h3>
+            <p>融合前沿人工智能與先進醫學影像技術，為醫療機構、研究單位提供高效、精準、可及的智能診斷解決方案。</p>
+        </div>
+    </div>
+</div>
+
+<!-- 核心技術 與 產品矩陣 -->
+<section id="products">
+    <div class="container">
+        <h2 class="section-title">核心產品與服務矩陣</h2>
+        <div class="grid-2col">
+            <div class="card">
+                <i class="fas fa-brain"></i>
+                <h3>神經影像定量分析</h3>
+                <p>基於深度學習的MRI全自動分割、海馬體體積測量、白質高信號量化，輔助阿爾茨海默病早期篩查。</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-lungs"></i>
+                <h3>CT腫瘤智能篩查</h3>
+                <p>肺部/肝臟結節檢測、良惡性分類及隨訪對比系統，高靈敏度輔助醫生判讀。</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-microscope"></i>
+                <h3>醫療垂直領域大模型</h3>
+                <p>基於影像-文本多模態融合，自動生成結構化報告，支持臨床輔助決策與科研數據挖掘。</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-flask"></i>
+                <h3>科研定制化服務</h3>
+                <p>與高校及醫院聯合開發算法，影像生物標誌物分析，針對性項目支持。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 技術架構圖  (圖文說明) -->
+<section id="tech">
+    <div class="container">
+        <h2 class="section-title">分層解耦技術架構</h2>
+        <div class="tech-arch">
+            <div class="layers">
+                <div class="layer"><strong>📡 數據源與接入層</strong> – PACS系統 (MRI/CT/超聲) · 科研數據 · 公開數據集</div>
+                <div class="layer"><strong>🔐 核心平台層</strong> – 數據治理與聯邦學習引擎 · 多模態影像配準融合 · AI算法倉庫 & 醫療大模型預訓練</div>
+                <div class="layer"><strong>⚙️ 應用服務層</strong> – 神經影像定量 · CT結節篩查 · 科研定制分析 · 智能報告生成</div>
+                <div class="layer"><strong>🌐 交付部署層</strong> – API接口 · SaaS診斷門戶 · 本地化部署套件</div>
+            </div>
+            <p style="margin-top: 24px; font-style: italic; color:#2c6e8f;">✔ 安全合規優先 · 模塊化擴展 · 支持混合部署 (SaaS/私有化)</p>
+        </div>
+    </div>
+</section>
+
+<!-- 市場拓展路線圖 -->
+<section id="roadmap">
+    <div class="container">
+        <h2 class="section-title">三步市場戰略 | 2026–未來</h2>
+        <div class="timeline">
+            <div class="phase">
+                <h4>📌 第一階段</h4>
+                <p><strong>2026 · 驗證與立足</strong><br>✅ 1-2家香港標杆私立醫院/大學實驗室<br>✅ 深度定制神經影像分析，發表合作論文<br>✅ 申請ITF/數碼港資助，打造燈塔專案</p>
+            </div>
+            <div class="phase">
+                <h4>🚀 第二階段</h4>
+                <p><strong>2027 · 深化與區域擴張</strong><br>✅ 進軍大灣區三甲醫院國際部<br>✅ 標準化SaaS產品(肺結節/智能診斷)<br>✅ 設立深圳/廣州聯絡處，擴大營收規模</p>
+            </div>
+            <div class="phase">
+                <h4>🌏 第三階段</h4>
+                <p><strong>2028+ · 平台化與國際化</strong><br>✅ 開放API生態，連接PACS/體檢機構<br>✅ 探索新加坡/泰國高端醫療市場<br>✅ 與藥企合作影像生物標誌物分析</p>
+            </div>
+        </div>
+        <div style="margin-top: 32px; background: #EFF7FA; border-radius: 28px; padding: 20px;">
+            <i class="fas fa-chart-line" style="color:#1E7EA5"></i> <strong>商業模式</strong>：科研項目（15–30萬港幣）＋ SaaS年費（8–20萬港幣）＋ 數據處理服務（1–5萬港幣）
+        </div>
+    </div>
+</section>
+
+<!-- 管理團隊 & 人才計畫 -->
+<section id="team">
+    <div class="container">
+        <h2 class="section-title">跨學科團隊與人才戰略</h2>
+        <div class="grid-2col">
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>核心團隊</h3>
+                <p>創始人具備醫學影像、人工智能、臨床醫學與管理科學交叉背景；技術顧問委員會由港大/中大生物醫學工程教授、放射科專家領銜。</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chalkboard-user"></i>
+                <h3>研發指導機制</h3>
+                <p>配備一對一導師、輪崗制度、內部論文研討會，並與香港高校聯合培養，持續提升人才研發經驗。</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-magnifying-glass-chart"></i>
+                <h3>緊急招募 | 高級研究員</h3>
+                <p>負責多模態MRI腦影像分析/醫療大模型開發，博士學歷+頂會論文優先。提供股權激勵及頂級學術資源。</p>
+                <a href="#contact" style="margin-top: 12px; display: inline-block; font-weight: 600;">應徵方式 →</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>人才補助</h3>
+                <p>申請數碼港/科技園人才計畫，為優秀研究人才提供具有競爭力的薪酬及香港科技人才入境計畫支持。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 財務亮點 + 風險 -->
+<section>
+    <div class="container">
+        <h2 class="section-title">首年目標 & 資金配置</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+            <div style="flex:1; background: #EAF4F9; border-radius: 28px; padding: 24px;">
+                <i class="fas fa-chart-simple"></i>
+                <h3 style="margin: 16px 0 8px">營業收入 300萬港幣</h3>
+                <p>2-3個科研項目 + 早期SaaS客戶</p>
+                <hr style="margin: 16px 0">
+                <p>毛利率 60% | 淨盈餘 30萬港幣</p>
+            </div>
+            <div style="flex:1; background: #EAF4F9; border-radius: 28px; padding: 24px;">
+                <i class="fas fa-chart-pie"></i>
+                <h3 style="margin: 16px 0 8px">啟動資金 270萬港幣</h3>
+                <ul style="padding-left: 20px;">
+                    <li>研發投入 45% (算法/模型訓練)</li>
+                    <li>團隊建設 40% (核心人才薪酬)</li>
+                    <li>市場運營 15% (學術會議/品牌)</li>
+                </ul>
+                <p style="margin-top: 12px;">✅ 申請ITF企業支援計畫及數碼港基金</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 聯繫方式 & 加入我們 -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">聯繫我們</h2>
+        <div class="grid-2col">
+            <div class="card">
+                <i class="fas fa-envelope"></i>
+                <h3>業務洽談</h3>
+                <p>📧 info@hksmii.com<br>📞 +852 1234 5678 (技術合作/市場)</p>
+                <p>📍 香港數碼港3期 Core E 4樓</p>
+            </div>
+            <div class="card">
+                <i class="fab fa-github"></i>
+                <h3>加入科研團隊</h3>
+                <p>請將簡歷與研究興趣發送至 career@hksmii.com<br>標題：【高級研究員/算法工程師】</p>
+                <p><i class="fas fa-file-alt"></i> 招募專案：醫療大模型、醫學影像分析、聯邦學習方向</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h3 style="color:white">HK-SMII</h3>
+                <p style="margin-top: 8px;">香港智慧醫學影像科技有限公司<br>AI for Precision Health · 智慧影像 智領未來</p>
+            </div>
+            <div>
+                <h4>快速鏈接</h4>
+                <p><a href="#tech">技術架構</a> · <a href="#roadmap">市場戰略</a> · <a href="#team">招募</a></p>
+            </div>
+            <div>
+                <h4>法律與隱私</h4>
+                <p>嚴格遵循香港《個人資料（隱私）條例》<br>聯邦學習 · 數據不出域</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 香港智慧醫學影像科技有限公司 | 版權所有 | 科技創新 賦能醫療
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
