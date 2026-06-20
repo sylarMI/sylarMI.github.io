@@ -37,26 +37,41 @@
             gap: 20px;
         }
 
-        .logo h1 {
-            font-size: 1.6rem;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo img {
+            height: 56px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, #0B3B5F, #1E7EA5);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             letter-spacing: -0.3px;
+            line-height: 1.2;
         }
 
-        .logo p {
-            font-size: 0.75rem;
+        .logo-text p {
+            font-size: 0.7rem;
             color: #1E7EA5;
             font-weight: 500;
+            letter-spacing: 0.3px;
         }
 
         .nav-links {
             display: flex;
             gap: 28px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -244,24 +259,16 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
-        .timeline {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            justify-content: space-between;
-        }
-
-        .phase {
-            flex: 1;
-            background: #F9FCFD;
-            padding: 24px;
-            border-radius: 32px;
-            border-top: 4px solid #1E7EA5;
-        }
-
-        .phase h4 {
-            font-size: 1.5rem;
-            color: #0B3B5F;
+        .recruit-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            margin-left: 10px;
+            vertical-align: middle;
         }
 
         .footer {
@@ -299,8 +306,12 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-            .phase {
-                flex: 100%;
+            .logo img {
+                height: 42px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 14px;
             }
         }
     </style>
@@ -311,14 +322,17 @@
 <div class="container">
     <div class="navbar">
         <div class="logo">
-            <h1>HK-SMII</h1>
-            <p>香港智慧醫學影像科技有限公司</p>
+            <!-- 本地Logo图片：请将图片放在 images/logo.png -->
+            <img src="images/logo.png" alt="HK-SMII Logo">
+            <div class="logo-text">
+                <h1>HK-SMII</h1>
+                <p>香港智慧醫學影像科技有限公司</p>
+            </div>
         </div>
         <ul class="nav-links">
             <li><a href="#home">首頁</a></li>
             <li><a href="#tech">技術架構</a></li>
             <li><a href="#products">產品服務</a></li>
-            <li><a href="#roadmap">市場路線</a></li>
             <li><a href="#team">團隊招募</a></li>
             <li><a href="#contact">聯繫</a></li>
         </ul>
@@ -368,7 +382,7 @@
     </div>
 </div>
 
-<!-- 核心技術 與 產品矩陣 -->
+<!-- 核心產品與服務矩陣 -->
 <section id="products">
     <div class="container">
         <h2 class="section-title">核心產品與服務矩陣</h2>
@@ -397,7 +411,7 @@
     </div>
 </section>
 
-<!-- 技術架構圖  (圖文說明) -->
+<!-- 技術架構圖 -->
 <section id="tech">
     <div class="container">
         <h2 class="section-title">分層解耦技術架構</h2>
@@ -413,31 +427,7 @@
     </div>
 </section>
 
-<!-- 市場拓展路線圖 -->
-<section id="roadmap">
-    <div class="container">
-        <h2 class="section-title">三步市場戰略 | 2026–未來</h2>
-        <div class="timeline">
-            <div class="phase">
-                <h4>📌 第一階段</h4>
-                <p><strong>2026 · 驗證與立足</strong><br>✅ 1-2家香港標杆私立醫院/大學實驗室<br>✅ 深度定制神經影像分析，發表合作論文<br>✅ 申請ITF/數碼港資助，打造燈塔專案</p>
-            </div>
-            <div class="phase">
-                <h4>🚀 第二階段</h4>
-                <p><strong>2027 · 深化與區域擴張</strong><br>✅ 進軍大灣區三甲醫院國際部<br>✅ 標準化SaaS產品(肺結節/智能診斷)<br>✅ 設立深圳/廣州聯絡處，擴大營收規模</p>
-            </div>
-            <div class="phase">
-                <h4>🌏 第三階段</h4>
-                <p><strong>2028+ · 平台化與國際化</strong><br>✅ 開放API生態，連接PACS/體檢機構<br>✅ 探索新加坡/泰國高端醫療市場<br>✅ 與藥企合作影像生物標誌物分析</p>
-            </div>
-        </div>
-        <div style="margin-top: 32px; background: #EFF7FA; border-radius: 28px; padding: 20px;">
-            <i class="fas fa-chart-line" style="color:#1E7EA5"></i> <strong>商業模式</strong>：科研項目（15–30萬港幣）＋ SaaS年費（8–20萬港幣）＋ 數據處理服務（1–5萬港幣）
-        </div>
-    </div>
-</section>
-
-<!-- 管理團隊 & 人才計畫 -->
+<!-- 管理團隊 & 人才戰略（含紧急招募超链接） -->
 <section id="team">
     <div class="container">
         <h2 class="section-title">跨學科團隊與人才戰略</h2>
@@ -454,40 +444,16 @@
             </div>
             <div class="card">
                 <i class="fas fa-magnifying-glass-chart"></i>
-                <h3>緊急招募 | 高級研究員</h3>
+                <h3>緊急招募 | 高級研究員 <span class="recruit-badge">HOT</span></h3>
                 <p>負責多模態MRI腦影像分析/醫療大模型開發，博士學歷+頂會論文優先。提供股權激勵及頂級學術資源。</p>
-                <a href="#contact" style="margin-top: 12px; display: inline-block; font-weight: 600;">應徵方式 →</a>
+                <a href="recruit.html" style="margin-top: 16px; display: inline-block; font-weight: 600; color: #1E7EA5;">
+                    查看詳情 → <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
             <div class="card">
                 <i class="fas fa-hand-holding-usd"></i>
                 <h3>人才補助</h3>
                 <p>申請數碼港/科技園人才計畫，為優秀研究人才提供具有競爭力的薪酬及香港科技人才入境計畫支持。</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 財務亮點 + 風險 -->
-<section>
-    <div class="container">
-        <h2 class="section-title">首年目標 & 資金配置</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 24px;">
-            <div style="flex:1; background: #EAF4F9; border-radius: 28px; padding: 24px;">
-                <i class="fas fa-chart-simple"></i>
-                <h3 style="margin: 16px 0 8px">營業收入 300萬港幣</h3>
-                <p>2-3個科研項目 + 早期SaaS客戶</p>
-                <hr style="margin: 16px 0">
-                <p>毛利率 60% | 淨盈餘 30萬港幣</p>
-            </div>
-            <div style="flex:1; background: #EAF4F9; border-radius: 28px; padding: 24px;">
-                <i class="fas fa-chart-pie"></i>
-                <h3 style="margin: 16px 0 8px">啟動資金 270萬港幣</h3>
-                <ul style="padding-left: 20px;">
-                    <li>研發投入 45% (算法/模型訓練)</li>
-                    <li>團隊建設 40% (核心人才薪酬)</li>
-                    <li>市場運營 15% (學術會議/品牌)</li>
-                </ul>
-                <p style="margin-top: 12px;">✅ 申請ITF企業支援計畫及數碼港基金</p>
             </div>
         </div>
     </div>
@@ -524,7 +490,7 @@
             </div>
             <div>
                 <h4>快速鏈接</h4>
-                <p><a href="#tech">技術架構</a> · <a href="#roadmap">市場戰略</a> · <a href="#team">招募</a></p>
+                <p><a href="#tech">技術架構</a> · <a href="#products">產品服務</a> · <a href="recruit.html">招募</a></p>
             </div>
             <div>
                 <h4>法律與隱私</h4>
