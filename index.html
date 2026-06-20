@@ -37,34 +37,20 @@
             gap: 20px;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .logo img {
-            height: 56px;
-            width: auto;
-            display: block;
-        }
-
-        .logo-text h1 {
-            font-size: 1.5rem;
+        .logo h1 {
+            font-size: 1.6rem;
             font-weight: 700;
             background: linear-gradient(135deg, #0B3B5F, #1E7EA5);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             letter-spacing: -0.3px;
-            line-height: 1.2;
         }
 
-        .logo-text p {
-            font-size: 0.7rem;
+        .logo p {
+            font-size: 0.75rem;
             color: #1E7EA5;
             font-weight: 500;
-            letter-spacing: 0.3px;
         }
 
         .nav-links {
@@ -162,8 +148,10 @@
 
         .hero-image img {
             max-width: 100%;
-            width: 300px;
-            opacity: 0.9;
+            width: 320px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
         /* section通用 */
@@ -306,8 +294,8 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-            .logo img {
-                height: 42px;
+            .hero-image img {
+                width: 200px;
             }
             .nav-links {
                 flex-wrap: wrap;
@@ -322,12 +310,8 @@
 <div class="container">
     <div class="navbar">
         <div class="logo">
-            <!-- 本地Logo图片：请将图片放在 images/logo.png -->
-            <img src="images/logo.png" alt="HK-SMII Logo">
-            <div class="logo-text">
-                <h1>HK-SMII</h1>
-                <p>香港智慧醫學影像科技有限公司</p>
-            </div>
+            <h1>HK-SMII</h1>
+            <p>香港智慧醫學影像科技有限公司</p>
         </div>
         <ul class="nav-links">
             <li><a href="#home">首頁</a></li>
@@ -352,16 +336,8 @@
             </div>
         </div>
         <div class="hero-image">
-            <!-- 装饰性SVG 医学影像示意 -->
-            <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="150" cy="120" r="80" fill="#E1F0F9" stroke="#1E7EA5" stroke-width="2"/>
-                <path d="M120 100 L180 100 M150 80 L150 160" stroke="#0B3B5F" stroke-width="3" stroke-linecap="round"/>
-                <rect x="130" y="190" width="40" height="30" fill="#1E7EA5" rx="8" />
-                <text x="145" y="210" fill="white" font-size="12" text-anchor="middle">MRI</text>
-                <circle cx="70" cy="180" r="18" fill="#C6E2F2" />
-                <circle cx="230" cy="180" r="18" fill="#C6E2F2" />
-                <path d="M50 220 L80 200 L120 220 L160 200 L200 220 L240 200 L270 220" stroke="#0B3B5F" stroke-width="2" fill="none"/>
-            </svg>
+            <!-- 本地Hero图片：请将图片放在 images/hero-image.png -->
+            <img src="images/Logo.png" alt="智慧醫學影像示意">
         </div>
     </div>
 </section>
